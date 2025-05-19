@@ -1,0 +1,49 @@
+/* table */
+table {
+    width: 100%;
+    background-color: var(--white);
+    border-radius: .5rem;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+th {
+    font: var(--subtitle);
+    color: var(--gray);
+}
+
+td {
+    font: var(--text);
+    color: var(--medium-gray);
+}
+
+th, td {
+    padding: .5rem 1.5rem;
+    text-align: left;
+    border: 1px solid var(--soft-gray);
+}
+
+/* defining border-radius to every corner */
+thead tr:first-child th:first-child {
+    border-top-left-radius: 0.5rem;
+}
+
+thead tr:first-child th:last-child {
+    border-top-right-radius: 0.5rem;
+}
+
+tbody tr:last-child td:first-child {
+    border-bottom-left-radius: 0.5rem;
+}
+
+tbody tr:last-child td:last-child {
+    border-bottom-right-radius: 0.5rem;
+}
+
+/* svg */
+img {
+    margin-left: .5rem;
+    vertical-align: middle;
+    height: 20px;
+    object-fit: contain;
+}
