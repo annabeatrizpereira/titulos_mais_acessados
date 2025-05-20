@@ -10,7 +10,6 @@ import "./assets/gold-medal.svg"
 import "./assets/sad.svg"
 
 export function App(){
-
     // definindo um tipo para os dados codlivro e nome
     const [dados, setDados] = useState<{ data: { CodLivro: number, Nome: string }[] } | null>(null);
 
@@ -30,16 +29,19 @@ export function App(){
         .catch((err) => setErro(err.message));
     }, []);
 
-    // if success = false
-    if (erro) return <div className="message">
-        <img src="./src/assets/sad.svg" alt="ícone de emoji triste" />
-        <h2>Ops! Tente novamente mais tarde</h2>
-    </div>;
 
-    // if success = true
-    if (!dados) return <div className="message ellipsis">
-        <h2>Carregando</h2>
-    </div>;
+    if (erro){
+        return <div className="message">
+            <img src="./src/assets/sad.svg" alt="ícone de emoji triste" />
+            <h2>Ops! Tente novamente mais tarde</h2>
+        </div>
+    }
+
+    if (!dados){ 
+        return <div className="message ellipsis">
+            <h2>Carregando</h2>
+        </div>
+    }
 
 
     const { data: livro } = dados;
@@ -47,7 +49,7 @@ export function App(){
     return (
         <>
             < Header />
-            <div className="container">
+            <main className="container">
                 < Title name="Top 10 títulos mais acessados do Bookplay" />
                 <Subtitle name="Confira abaixo a lista completa dos livros mais acessados do Bookplay!" />
 
@@ -71,8 +73,8 @@ export function App(){
                         </tr>
                         ))}
                     </tbody>
-                    </table>
-            </div>
+                </table>
+            </main>
 
             < Footer />
         </>

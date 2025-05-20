@@ -113,11 +113,14 @@ tbody tr:last-child td:last-child {
     overflow: hidden;
     display: inline-block;
     vertical-align: bottom;
+    transform: translateX(-0.25em);
     animation: ellipsis steps(4, end) 1.5s infinite;
     width: 0px;
 
     color: var(--blue);
     font-size: 2rem;
+
+    margin-left: 1rem;
 }
 
 @keyframes ellipsis {
