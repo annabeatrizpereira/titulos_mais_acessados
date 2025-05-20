@@ -1,10 +1,52 @@
+/* header & footer  */
+header, footer {
+    background-color: var(--blue);
+    padding-inline: 6rem;
+    padding-block: 1.5rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav ul {
+    list-style-type: none;
+}
+
+nav ul li a {
+    margin-left: 1.5rem;
+    text-decoration: none;
+    color: var(--white);
+}
+
+/* select */
+select {
+    background-color: inherit;
+    color: var(--white);
+    border: none;
+    font: var(--subtitle);
+
+    width: 8rem;
+    text-align: center;
+}
+
+select option {
+    color: var(--gray);
+}
+
+select:focus {
+    border: none;
+    outline: none;
+}
+
 /* table */
 table {
     width: 100%;
-    background-color: var(--white);
+    background-color: var(--soft-gray);
     border-radius: .5rem;
     border-collapse: separate;
     border-spacing: 0;
+    margin-top: 2rem;
 }
 
 th {
@@ -20,7 +62,7 @@ td {
 th, td {
     padding: .5rem 1.5rem;
     text-align: left;
-    border: 1px solid var(--soft-gray);
+    border: 1px solid var(--white);
 }
 
 /* defining border-radius to every corner */
@@ -41,9 +83,43 @@ tbody tr:last-child td:last-child {
 }
 
 /* svg */
-img {
+.gold-medals {
     margin-left: .5rem;
     vertical-align: middle;
     height: 20px;
     object-fit: contain;
+}
+
+/* loading */
+.message {
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    background-color: var(--white);
+}
+
+.message img {
+    width: 100px;
+    margin-bottom: 2rem;
+}
+
+.ellipsis:after {
+    content: "\2026";
+    overflow: hidden;
+    display: inline-block;
+    vertical-align: bottom;
+    animation: ellipsis steps(4, end) 1.5s infinite;
+    width: 0px;
+
+    color: var(--blue);
+    font-size: 2rem;
+}
+
+@keyframes ellipsis {
+    to {width: 1.25em;}
 }

@@ -7,10 +7,10 @@
 
 /* variables */
 :root {
-    --white: #FCFCFD;
+    --white: #ffffff;
     --soft-gray: #f4f5f7;
     --medium-gray: #585656;
-    --gray: #5c5e64;
+    --gray: #525252;
     --blue: #48a0dc;
 
     --font: 'Poppins', sans-serif;
@@ -24,7 +24,7 @@
     padding-block: 4rem;
     padding-inline: 6rem;
 
-    background-color: var(--blue);
+    background-color: var(--white);
     min-height: 100vh;
 }
 
@@ -32,12 +32,42 @@
 /* fonts */
 h1 {
     font: var(--title);
+    color: var(--blue);
+}
+
+h2 {
+    font: var(--title);
+    color: var(--blue);
+}
+
+h3 {
+    font: var(--subtitle);
     color: var(--white);
 }
 
 p{
     font: var(--text);
     color: var(--white);
-    margin-bottom: 2rem;
 }
 
+a {
+    font: var(--subtitle);
+    text-decoration: none;
+    color: var(--white);
+}
+
+a:hover {
+    opacity: 80%;
+}
+
+small {
+    font: var(--text);
+    color: var(--gray);
+}
+
+/* logo */
+#logo {
+    height: 30px;
+    width: auto;
+    object-fit: contain;
+}
